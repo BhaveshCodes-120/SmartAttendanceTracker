@@ -28,7 +28,7 @@ function formatTime(isoString) {
 async function loadUserData() {
     loadingText.innerText = 'Loading User Data...';
     try {
-        const response = await fetch('/api/users');
+        const response = await fetch("https://smartattendancetracker-1.onrender.com/api/users");
         const users = await response.json();
 
         if (users.length === 0) {
@@ -55,7 +55,7 @@ async function loadUserData() {
 // 2. Fetch and Render Attendance Logs
 async function fetchLogs() {
     try {
-        const response = await fetch('/api/attendance');
+        const response = await fetch("https://smartattendancetracker-1.onrender.com/api/attendance");
         const logs = await response.json();
         
         // Filter logs to just show today's if preferred, but for prototype we show all available from API
