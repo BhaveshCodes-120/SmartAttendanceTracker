@@ -83,7 +83,7 @@ async function markAttendance(userData) {
     cooldowns[userData.id] = Date.now();
 
     try {
-        const response = await fetch('/api/attendance', {
+        const response = await fetch("https://smartattendancetracker-1.onrender.com/api/attendance", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userId: userData.id })
