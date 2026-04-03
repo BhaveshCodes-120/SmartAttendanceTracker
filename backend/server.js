@@ -5,7 +5,8 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+// -------------------------------------------------------------------------------------------------------------------------//
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 // Parse incoming requests with JSON payloads (we might have large descriptor arrays)
@@ -119,7 +120,7 @@ app.get('/api/attendance', (req, res) => {
     const sorted = attendance.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     res.json(sorted);
 });
-
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+//-----------------------------------------------------------------------------------------------------------------------//
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
 });
