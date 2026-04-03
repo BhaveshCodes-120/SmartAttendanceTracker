@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="assets/background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+    <div class="glass-container home-container">
+        <h1>Smart Attendance System</h1>
+        <p>AI-Powered Face Recognition for Seamless automated attendance.</p>
+
+        <div>
+            <a href="attendance.html" class="btn btn-primary">Mark Attendance</a>
+            <button id="adminBtn" class="btn btn-secondary">Admin Registration</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('adminBtn').addEventListener('click', () => {
+            const pin = prompt("Enter Admin PIN :");
+            if (pin === 'ITonTOP@2026') {
+                window.location.href = 'register.html';
+            } else if (pin !== null) {
+                alert("Incorrect PIN");
+            }
+        });
+    </script>
+</body>
+
+</html>

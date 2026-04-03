@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Attendance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/face-api.min.js"></script>
+    <script defer src="js/attendance.js"></script>
+</head>
+
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="assets/background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+    <div id="overlay">
+        <div class="loader"></div>
+        <h2 id="loadingText">Loading AI Models...</h2>
+    </div>
+
+    <div class="glass-container">
+        <div class="app-header">
+            <h2>Live Attendance</h2>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+
+        <div class="main-content">
+            <div class="camera-section">
+                <video id="video" width="600" height="450" autoplay muted></video>
+                <canvas id="overlayCanvas"></canvas>
+            </div>
+
+            <div class="logs-container">
+                <h3>Today's Attendance Logs</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Roll No</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logsTableBody">
+                        <!-- Rows injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+</body>
+
+</html>

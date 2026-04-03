@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Load face-api locally -->
+    <script defer src="js/face-api.min.js"></script>
+    <script defer src="js/register.js"></script>
+</head>
+
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="assets/background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+    <div id="overlay">
+        <div class="loader"></div>
+        <h2>Loading AI Models...</h2>
+    </div>
+
+    <div class="glass-container">
+        <div class="app-header">
+            <h2>Admin Registration Dashboard</h2>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+
+        <div class="main-content">
+            <div class="camera-section">
+                <video id="video" width="600" height="450" autoplay muted></video>
+                <canvas id="overlayCanvas"></canvas>
+            </div>
+
+            <div class="details-section">
+                <h3>Student Details</h3>
+                <br>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="E.g. John Doe" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Roll Number</label>
+                    <input type="text" id="rollNo" placeholder="E.g. 101" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Division</label>
+                    <input type="text" id="division" placeholder="E.g. A" autocomplete="off">
+                </div>
+                <button id="captureBtn" class="btn btn-primary" style="margin: 20px 0 0 0;" disabled>
+                    Capture & Register
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+</body>
+
+</html>
